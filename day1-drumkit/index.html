@@ -51,7 +51,9 @@
 <script>
   window.addEventListener('keydown', function(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    console.log(audio);
+    if(!audio) return; //stop the function from running if there is no audio assigned to key that is pressed
+
+    audio.play();
   });
 </script>
 </body>
