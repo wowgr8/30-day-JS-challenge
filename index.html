@@ -13,7 +13,7 @@ const people = ['Beck, Glen', 'Becker, Carl', 'Beckett, Samuel', 'Berry, Halle',
 
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
-// Notes: Filter() takes in an function, within the function we use a if statement with comparison opperators.
+// Notes: Filter() takes in an function, within the function we use a if statement with comparison operators.
 // Can be refactored in one line using arrow function: const dobIn1500s = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
 const dobIn1500s = inventors.filter(function(inventor){
   if(inventor.year >= 1500 && inventor.year < 1600){
@@ -32,5 +32,21 @@ const firstAndLastName = inventors.map(function(inventor){
 })
 
 console.log(firstAndLastName);
+
+
+// Array.prototype.sort()
+// 3. Sort the inventors by DOB, oldest to youngest.
+// Notes: sort() takes in two parameters and compares them (a , b). You can use a if statement and comparison operator for parameter's year key by returning 1 or -1 to bubble them.
+// can be refactored to: const oldToYoungDOB = inventors.sort((personA, personB) => personA.year > personB.year ? 1 : -1 ); The last part is called a ternary operator.
+const oldToYoungDOB = inventors.sort(function(personA, personB){
+  if(personA.year > personB.year){
+    return 1;
+  } else {
+    return -1;
+  }
+})
+
+console.table(oldToYoungDOB);
+
 
 </script>
