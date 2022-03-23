@@ -12,7 +12,9 @@ const people = ['Beck, Glen', 'Becker, Carl', 'Beckett, Samuel', 'Berry, Halle',
 
 
 // Array.prototype.filter()
-// 1. Filter the list of investors for those who were born in the 1500's
+// 1. Filter the list of inventors for those who were born in the 1500's
+// Notes: Filter() takes in an function, within the function we use a if statement with comparison opperators.
+// Can be refactored in one line using arrow function: const dobIn1500s = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
 const dobIn1500s = inventors.filter(function(inventor){
   if(inventor.year >= 1500 && inventor.year < 1600){
     return true;
@@ -21,5 +23,14 @@ const dobIn1500s = inventors.filter(function(inventor){
   }
 })
 console.table(dobIn1500s); // this is like a console.log but returns a easy to read table.
+
+// Array.prototype.map()
+// 2. Give us an array of the inventors first and last names.
+// Notes: Can be refactored: const firstAndLastName = inventors.map(inventor => inventor.first + " " + inventor.last);
+const firstAndLastName = inventors.map(function(inventor){
+  return (inventor.first + " " + inventor.last);
+})
+
+console.log(firstAndLastName);
 
 </script>
