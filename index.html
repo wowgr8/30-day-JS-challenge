@@ -1,4 +1,5 @@
-<!-- Some data we can work with. -->
+<script>
+// Some data we can work with.
 
 const inventors = [
 { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955},
@@ -8,3 +9,17 @@ const inventors = [
 ];
 
 const people = ['Beck, Glen', 'Becker, Carl', 'Beckett, Samuel', 'Berry, Halle', 'Mac, Big', 'Cudi, Kid'];
+
+
+// Array.prototype.filter()
+// 1. Filter the list of investors for those who were born in the 1500's
+const dobIn1500s = inventors.filter(function(inventor){
+  if(inventor.year >= 1500 && inventor.year < 1600){
+    return true;
+  } else {
+    return false;
+  }
+})
+console.table(dobIn1500s); // this is like a console.log but returns a easy to read table.
+
+</script>
