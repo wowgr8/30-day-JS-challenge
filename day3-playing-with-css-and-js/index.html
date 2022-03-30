@@ -57,6 +57,16 @@ const totalYears = inventors.reduce((total, inventor) => {
 
 console.log(totalYears);
 
+                     // - - OR - -
+
+let totalOfYears = 0;
+for(let i = 0; i < inventors.length; i++) {
+  totalOfYears += inventors[i].year
+}                    
+
+console.log(totalOfYears);
+
+
 // 5. Sort the inventors by years lived
 
 
