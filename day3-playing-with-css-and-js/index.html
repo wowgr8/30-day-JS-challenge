@@ -8,7 +8,7 @@ const inventors = [
 { first: 'Marie', last: 'Curie', year: 1867, passed: 1934},
 ];
 
-const people = ['Beck, Glen', 'Becker, Carl', 'Beckett, Samuel', 'Berry, Halle', 'Mac, Big', 'Cudi, Kid'];
+//const people = ['Beck, Glen', 'Becker, Carl', 'Beckett, Samuel', 'Berry, Halle', 'Mac, Big', 'Cudi, Kid'];
 
 
 // Array.prototype.filter()
@@ -22,7 +22,7 @@ const dobIn1500s = inventors.filter(function(inventor){
     return false;
   }
 })
-console.table(dobIn1500s); // this is like a console.log but returns a easy to read table.
+//console.table(dobIn1500s); // this is like a console.log but returns a easy to read table.
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names.
@@ -31,7 +31,7 @@ const firstAndLastName = inventors.map(function(inventor){
   return (inventor.first + " " + inventor.last);
 })
 
-console.log(firstAndLastName);
+//console.log(firstAndLastName);
 
 
 // Array.prototype.sort()
@@ -46,16 +46,16 @@ const oldToYoungDOB = inventors.sort(function(personA, personB){
   }
 })
 
-console.table(oldToYoungDOB);
+//console.table(oldToYoungDOB);
 
 // Array.prototype.Reduce()
 // 4. How many years did all the inventors live?
 
 const totalYears = inventors.reduce((total, inventor) => {
-  return total + (inventor.pased - inventor.year);
+  return total + (inventor.passed - inventor.year);
 }, 0);
 
-console.log(totalYears);
+//console.log(totalYears);
 
                      // - - OR - -
 
@@ -64,10 +64,28 @@ for(let i = 0; i < inventors.length; i++) {
   totalOfYears += inventors[i].year
 }                    
 
-console.log(totalOfYears);
+//console.log(totalOfYears);
 
 
 // 5. Sort the inventors by years lived
+
+// const invYear = inventors.year;
+// const invPass = inventors.passed;
+// let totesLived = 0;
+
+const yearsLived = inventors.sort(function (persona, personb){
+  if((persona.passed - persona.year) > (personb.passed - personb.year)){
+    return -1;
+  } else {
+    return 1;
+  }
+})
+
+console.table(yearsLived);
+
+
+
+
 
 
 </script>
